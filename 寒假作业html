@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="dati.css">
+	 <div id ="mybox"></div>
+<div id ="box">
+	  <!-- 异步的 -->
+	<div class ="box1">A.Ajax全名 Asynchronous JavaScript and XML，同步的JS和XML，是一种新技术，但是它并不是一种编程语言，而是一种新方法</div>
+	  <!-- 不重新加载整个儿页面 -->
+	<div class ="box2">B.在重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。
+    </div>
+     <!-- 此项正确 -->
+    <div class ="box3">C.使用了Ajax的网页，通过跟后台服务器进行少量数据交互，网页可以实现异步局部更新。
+    </div>
+     <!-- 请求错误 -->
+    <div class="box4">D.4XX表示客户端提交的请求正确</div>
+ </div>
+ <form name = "myForm" action="答题.html" method="get" onsubmit="return mysub()">
+<p>
+	<input type="text" name="answer" id="box5"><span class ="ok" style="color:red;"></span>
+</p>
+<p>
+	<input type="button" name="btn1" class="button" value ="确认" disabled="disabled" onclick="func()"/>
+</p>
+<P>
+   答题倒计时<strong id ="endtime"></strong>s!	
+</P>
+</head>
+<body>
+	<script src ="animate.js" type="text/javascript"></script>
+   <script type="text/javascript">
+   	window.onload=function(){
+	var request = new XMLHttpRequest();
+	request.onreadystatechange = function (){
+		if(request.status ==200 && request.readyState == 4){
+			console.log('OK');
+			document.getElementById('mybox').innerHTML= request.responseText;
+		}else{
+			console.log('request was unsuccessful' + request.status);
+		}
+	}
+	request.open('GET',"https://www.easy-mock.com/mock/5c68285ac5d6817e50999e17/example/start#!method=get",true);
+	request.send();
+
+}
+   </script>
+</body>
+</html>
