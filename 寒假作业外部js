@@ -1,0 +1,23 @@
+var a = document.getElementById("answer") 
+if(a =="C"){
+	alert('ok')
+
+}
+else {
+	alert('error');
+}
+var i = 60;
+function remainTime(){
+	if(i>0){
+		document.getElementById("endtime").innerHTML = i--;
+        setTimeout("remainTime()",1000);
+
+	}
+	if(i==0){
+		document.getElementById("btn").disabled =false;
+	}
+}
+	remainTime();
+	function func(){
+     alert("ok")
+	}
