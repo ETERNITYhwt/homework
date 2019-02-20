@@ -1,3 +1,5 @@
+html
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,3 +50,60 @@
    </script>
 </body>
 </html>
+
+外部的js
+var a = document.getElementById("answer") 
+if(a =="C"){
+	alert('ok')
+
+}
+else {
+	alert('error');
+}
+var i = 60;
+function remainTime(){
+	if(i>0){
+		document.getElementById("endtime").innerHTML = i--;
+        setTimeout("remainTime()",1000);
+
+	}
+	if(i==0){
+		document.getElementById("btn").disabled =false;
+	}
+}
+	remainTime();
+	function func(){
+     alert("ok")
+	}
+	
+	css
+	#mybox{
+	top:0;
+	width:350px;
+	height:40px;
+	background-color:pink;
+}
+#box{
+    margin:2px;
+	height:150px;
+}
+#box5{
+	left:360px;
+	margin:2px;
+	width:80px;
+	position:fixed;
+	height:40px;
+	top:2px;
+}
+.button{
+	left:450px;
+	top:2px;
+	position:fixed;
+	cursor:pointer;
+}
+#endtime{
+	width:30px;
+	height:20px;
+	right:0px;
+	position:fixed;
+}
